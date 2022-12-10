@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style.css" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <h2 class="box">Sesje</h2>
+</header>
+<article>
+    <p>Sesja to sposób przechowywania informacji (w zmiennych) do wykorzystania na wielu stronach.
+    W przeciwieństwie do plików cookie informacje nie są przechowywane na komputerze użytkownika, a nie na serwerze.</p>
+    <p>Aby rozpocząć sesję trzeba zastosować funkcję session_start();</p>
+    <p>Zapisujemy ją według standardów na początku w drugiej linijce przed tagami HTML</p>
+    <code>
+        session_start();
+    </code>
+    <p>Sesje są definiowane za pomocą globalnej zmiennej $_SESSION jest to typ array za pomocą którego możemy przenosić wartości między stronami</p>
+    <code>
+
+        session_start();
+
+        //Stworzenie zmiennej sesyjnej
+        $_SESSION["favcolor"] = "blue";
+        $_SESSION["favanimal"] = "horse";
+
+        </code>
+
+    <h2>Zakończenie sesji</h2>
+    <p>Aby zakończyć sesję trzeba zastosować funkcję session_unset() lub session-destroy().</p>
+    <code>
+
+     session_start();
+
+     // usunięcie wszystkich zmiennych sesyjnych
+     session_unset();
+
+     // zakończenie sesji
+     session_destroy();
+
+    </code>
+    <br><br>
+    <h2>Ciasteczka</h2>
+    <p>Plik cookie jest często używany do identyfikacji użytkownika.</p>
+    <p>Plik cookie to mały plik, który serwer umieszcza na komputerze użytkownika.</p>
+        <p>Za każdym razem, gdy ten sam komputer żąda strony w przeglądarce, wysyła również plik cookie.</p>
+            <p>Dzięki PHP możesz zarówno tworzyć, jak i pobierać wartości plików cookie.</p>
+    <p>Ciasteczka tworzymy za pomocą funkcji setcookie().</p>
+    <code>setcookie(name, value, expire, path, domain, secure, httponly);</code>
+    <p>Tylko parametr name jest wymagany reszta jest opcjonalna.</p>
+    <h2>Tworzenie i odzyskiwanie ciasteczek</h2>
+    <p>Poniższy przykład tworzy plik cookie o nazwie „użytkownik” z wartością „John Doe”. Plik cookie wygasa po 30 dniach (86400 * 30). Znak „/” oznacza, że ​​plik cookie jest dostępny w całej witrynie (w przeciwnym razie wybierz preferowany katalog).
+
+        Następnie pobieramy wartość pliku cookie „user” (za pomocą zmiennej globalnej $_COOKIE). Używamy również funkcji isset(), aby dowiedzieć się, czy plik cookie jest ustawiony:</p>
+    <code id="code">
+
+
+        &lt;?php&gt;
+$cookie_name = $_SESSION['name'];
+$cookie_value = "Użytkownik_strony";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+if(!isset($_COOKIE[$cookie_name])) {
+  echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+  echo "Ciasteczko '" . $cookie_name . "' jest ustawione<br>";
+        echo "Wartość jest: " . $_COOKIE[$cookie_name];
+}
+        ?&gt;
+    </code>
+    <br><br>
+    <p class="interview">! Pytanie na rozmowie kwalifikacyjnej z PHP</p>
+    <h2>Jak działa sesja oraz czym są ciasteczka?</h2>
+    <p><span style="color: darkseagreen">Ciasteczka </span> są często używane do identyfikacji użytkownika.
+       Ciasteczka to mały plik, który serwer umieszcza na komputerze użytkownika.
+       Za każdym razem, gdy ten sam komputer żąda strony w przeglądarce, wysyła również plik cookie.
+       Dzięki PHP możesz zarówno tworzyć, jak i pobierać wartości plików cookie.</p>
+
+    <p><span style="color: darkseagreen">Sesja</span> to sposób przechowywania informacji (w zmiennych) do wykorzystania na wielu stronach.
+        W przeciwieństwie do plików cookie informacje nie są przechowywane na komputerze użytkownika.
+        Sesja PHP polega na tym, że podczas pracy z aplikacją otwierasz ją, wprowadzasz zmiany, a następnie zamykasz.
+        To bardzo przypomina Sesję. Komputer wie, kim jesteś. Wie, kiedy uruchamiasz aplikację i kiedy ją kończysz.
+<br><br>
+        Ale w Internecie jest jeden problem: serwer WWW nie wie, kim jesteś ani co robisz, ponieważ adres HTTP nie utrzymuje stanu.
+        Zmienne sesyjne rozwiązują ten problem, przechowując informacje o użytkowniku do wykorzystania na wielu stronach (np. nazwa użytkownika, ulubiony kolor itp.).
+        Domyślnie zmienne sesyjne trwają do momentu zamknięcia przeglądarki przez użytkownika.
+        A więc zmienne sesyjne przechowują informacje o pojedynczym użytkowniku i są dostępne dla wszystkich stron w jednej aplikacji.</p>
+    <br><br><br><br><br>
+    <a href="../chapter/advanced.php" class="button">Powrót</a>
+    <br><br>
+</article>
+<script type="text/javascript" src="../script.js"></script>
+</body>
+</html>

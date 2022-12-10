@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    const elephant = document.querySelector(".pyramids");
+    const phplogo = document.querySelector(".palace");
+    const logo = document.querySelector(".logo");
+    const nav = document.querySelector("nav");
+    const info = document.querySelector(".info");
+
+    window.addEventListener("load", () => {
+        elephant.style.transform = "translateX(0)";
+        phplogo.style.transform = "translateX(0)";
+        logo.style.transform = "translateY(0)";
+        nav.style.transform = "translateY(0)";
+
+        setTimeout(() => {
+            info.style.transform = "translateY(0)";
+            info.style.opacity = "1";
+        }, 500);
+    });
+
+
+    window.addEventListener("scroll", () => {
+        const scrollVal = window.scrollY;
+
+        elephant.style.left = scrollVal * -0.25 + "px";
+        phplogo.style.left = scrollVal * 0.25 + "px";
+        info.style.marginTop = scrollVal * 1.1 + "px";
+
+        elephant.style.transition = "0s";
+        phplogo.style.transition = "0s";
+        info.style.transition = "0s";
+    });
+
+    window.onscroll = function(){
+        if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500){
+            info.style.opacity = "0";
+            info.style.transition = "0.6s";
+        }
+        else{
+            info.style.opacity = "1";
+            info.style.transition = "0.6s";
+        }
+    }
+</script>

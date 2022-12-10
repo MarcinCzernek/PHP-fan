@@ -1,0 +1,247 @@
+*{
+    box-sizing: border-box;
+
+}
+
+p{
+    position: center;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+/*Nagłówek */
+header{
+
+
+    background-image: linear-gradient(to right, rgba(0,0,545,0), rgba(0,0,5665,1));
+    padding: 30px;
+    font-size: 35px;
+    text-align: center;
+    color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+    float: left;
+    width: 30%;
+    height: 300px; /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/*Nagłówek */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(cornflowerblue, cornflowerblue);
+}
+/*Nagłówek */
+footer{
+    background-color: steelblue;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+/*Nagłówek */
+aside{
+    color: black;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+aside::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Clear floats after the columns */
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/*Nagłówek */
+article{
+    font-size: 20px;
+    text-align: center;
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-image: linear-gradient(to right,  #b3b3cc, #c2c2d6, #d1d1e0, #c2c2d6, #b3b3cc);
+    padding: 10px;
+
+}
+article.a{
+    font-size: 20px;
+}
+
+code {
+    font-size: 20px;
+    font-family: courier, monospace;
+    color: white;
+    padding: 1px;
+    background-color: dimgrey;
+    white-space: pre;
+    display: inline-grid;
+    text-align: center;
+    padding-left: 1px;
+
+}
+
+.cod{
+    font-size: 20px;
+    font-family: monospace;
+    color: goldenrod;
+    padding: 10px;
+    background-color: grey;
+}
+
+.chapter-header{
+    font-size: 20px;
+    text-align: center;
+    background-color: #002699;
+}
+
+.chapter-list{
+    font-size: 20px;
+    text-align: center;
+    background-color: royalblue;
+}
+
+.chapter-footer{
+    font-size: 20px;
+    text-align: center;
+    background-color: steelblue;
+}
+
+.header2{
+
+
+}
+
+a{
+    color: blue;
+
+    text-decoration: none;
+}
+
+return{
+    color: cyan;
+}
+
+ur{
+    list-style-type: none;
+}
+
+h3{
+    font-weight: bold;
+}
+
+h2{
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: white;
+    padding: 50px;
+}
+
+.collapsible{
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content{
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: grey;
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.box{
+
+    animation-name:appear;
+    animation-duration:5s;
+
+    animation-fill-mode: forwards;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    width: 100px;
+    height: 50px;
+    background-color: #0099ff;
+    border: none;
+    font-size: 1.0em;
+    color: white;
+    font-family: "Arial";
+    border-bottom: 7px solid slategrey;
+    padding-top: 10px;
+    transition: background-color 2s ease-in-out;
+}
+
+.button:hover {
+    background-color: hsl(40, 100%, 50%);
+}
+
+.interview{
+    background-color: indianred;
+    display: inline-grid;
+    text-align: center;
+
+}
+
+.NoMargin{
+    position: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.form{
+    position: center;
+    margin-left: 400px;
+    margin-right: 400px;
+
+}
